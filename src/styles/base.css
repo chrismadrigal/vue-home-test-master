@@ -83,3 +83,20 @@ a {
     padding: 0 var(--container-padding);
   }
 }
+
+.image-placeholder {
+  width: 100%;
+  background: var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+}
+
+.aspect-ratio-1 {
+  aspect-ratio: 1;
+}
+
+.aspect-ratio-3-2 {
+  aspect-ratio: 3 / 2;
+}

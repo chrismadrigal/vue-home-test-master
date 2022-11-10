@@ -1,18 +1,20 @@
 <template>
     <div class="container products-header">
         <h2>Refurbished</h2>
-        ProductsSort here...
+        <h3>ProductsSort here...</h3>
     </div>
     <div class="container" v-if="products">
-        ProductsGrid here.. {{ products }}
+        <ProductsGrid :products="products" />
     </div>
 </template>
 
 <script setup>
 import useApi from "@/composables/useApi.js";
+import ProductsGrid from "@/components/ProductsGrid";
 
 // Fetch the initial products
 const { response: products } = await useApi("/products");
+
 </script>
 
 <style scoped>
