@@ -15,6 +15,7 @@
   --color-text: #262223;
   --color-text-dark: #262223;
   --color-accent: #ffe82f;
+  --color-accent-dark: #f1da2c;
 }
 
 /* Other Global variables */
@@ -71,6 +72,51 @@ a {
   text-decoration: inherit;
 }
 
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: var(--color-text);
+}
+
+input,
+textarea {
+  width: 100%;
+  font-size: 16px;
+  line-height: 20px;
+  min-height: 28px;
+  padding: 12px 16px;
+  box-shadow: none;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-background);
+  transition: border 0.2s ease 0s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--color-border-darker);
+  outline: none;
+}
+
+input {
+  min-height: 28px;
+}
+
+input:focus {
+  border-color: var(--color-border-darker);
+  outline: none;
+}
+
+input+input {
+  margin-top: 16px;
+}
+
+textarea {
+  min-height: 108px;
+  resize: none;
+}
+
 /* Select Reset */
 select {
   position: relative;
@@ -121,4 +167,32 @@ select {
 
 .aspect-ratio-3-2 {
   aspect-ratio: 3 / 2;
+}
+
+.button {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.3rem;
+  font-weight: 700;
+  letter-spacing: .1rem;
+  display: block;
+  height: 40px;
+  text-align: center;
+  min-width: 160px;
+  background-color: var(--color-accent);
+  color: var(--color-text-dark);
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.button:hover,
+.button:active {
+  cursor: pointer;
+  background-color: var(--color-accent-dark);
+}
+
+.button:disabled {
+  pointer-events: none;
+  opacity: 0.8;
 }
