@@ -5,26 +5,16 @@
         Image Placeholder
       </div>
       <div class="product-info">
-        <h1 class="product-title">Produc Title here</h1>
+        <h1 class="product-title">{{ product.name }}</h1>
       </div>
     </div>
 
     <div class="reviews">
-      <h3>ProductStats component here</h3>
-      <h3>ProductReviews component here</h3>
-      <h3>ReviewsForm component here</h3>
-
-      <hr />
-      <p>product data:</p>
-      <code>
-                <pre>{{ product }}</pre>
-            </code>
-      <hr />
-      <p>reviews data:</p>
-      <code>
-                <pre>{{ reviews }}</pre>
-            </code>
-      <hr />
+      <template v-if="reviews && reviews.length">
+        <ProductStats :reviews="reviews" />
+        <ProductReviews :reviews="reviews" />
+      </template>
+      <ReviewsForm :productId="productId" @reviewAdded="onReviewAdded" />
     </div>
   </div>
 </template>
@@ -33,6 +23,9 @@
 import { ref } from "vue";
 import { useRoute } from "vue-router";
 import useApi from "@/composables/useApi.js";
+import ProductStats from "@/components/ProductStats";
+import ProductReviews from "@/components/ProductReviews";
+import ReviewsForm from "@/components/ReviewsForm";
 
 // Get the product Id from the route params.
 const route = useRoute();
@@ -45,7 +38,6 @@ const { response: product } = await useApi(`/products/${productId.value}`)
 const {
   response: reviews,
 } = await useApi(`/reviews?productId=${productId.value}`)
-
 
 </script>
 
@@ -61,10 +53,6 @@ const {
 .product-image {
   margin: 0 -20px;
   width: 100vw;
-}
-
-.product-title {
-  font-size: 1.75rem;
 }
 
 .product-info {
