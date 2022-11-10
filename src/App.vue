@@ -1,4 +1,11 @@
 <template>
-  <h1>Start here...</h1>
+  <GlobalHeader />
+  <main>
+    <router-view />
+  </main>
 </template>
+
+<script setup>
+import GlobalHeader from "./components/GlobalHeader.vue";
+</script>
 
