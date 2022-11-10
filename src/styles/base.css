@@ -9,7 +9,7 @@
   --color-background: #ffffff;
   --color-background-light: #f8f8f8;
 
-  --color-border: #ececec;
+  --color-border: #979797;
   --color-border-darker: #c4c4c4;
 
   --color-text: #262223;
@@ -24,6 +24,7 @@
   --container-padding-mobile: 20px;
   --sections-spacing: 48px;
   --sections-spacing-mobile: 32px;
+  --font-family: 'Poppins', sans-serif
 }
 
 /* Placeholder for a dark theme if I have time :) */
@@ -45,7 +46,7 @@ body {
   color: var(--color-text);
   background: var(--color-background);
   line-height: 1.6;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-family);
   font-size: 16px;
 }
 
@@ -70,6 +71,27 @@ a {
   text-decoration: inherit;
 }
 
+/* Select Reset */
+select {
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 8px 32px 8px 12px;
+  margin: 0;
+  width: 100%;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: normal;
+  cursor: inherit;
+  line-height: inherit;
+  z-index: 1;
+  outline: none;
+  color: #6b6b6b;
+}
+
 
 /* Global Utility Classes */
 .container {
@@ -86,7 +108,7 @@ a {
 
 .image-placeholder {
   width: 100%;
-  background: var(--color-border);
+  background: var(--color-background-light);
   display: flex;
   align-items: center;
   justify-content: center;
