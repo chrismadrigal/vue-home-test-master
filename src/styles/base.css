@@ -1,0 +1,85 @@
+/*
+* The font used in Figma is Assistant which is equivalent to this google font
+* https://fonts.google.com/specimen/Assistant?query=Assistant
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Color Variables for this project */
+:root {
+  --color-background: #ffffff;
+  --color-background-light: #f8f8f8;
+
+  --color-border: #ececec;
+  --color-border-darker: #c4c4c4;
+
+  --color-text: #262223;
+  --color-text-dark: #262223;
+  --color-accent: #ffe82f;
+}
+
+/* Other Global variables */
+:root {
+  --container-width: 1280px;
+  --container-padding: 72px;
+  --container-padding-mobile: 20px;
+  --sections-spacing: 48px;
+  --sections-spacing-mobile: 32px;
+}
+
+/* Placeholder for a dark theme if I have time :) */
+/* @media (prefers-color-scheme: dark) {
+
+} */
+
+
+/* Base page styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+}
+
+body {
+  color: var(--color-text);
+  background: var(--color-background);
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+main {
+  padding: 4.5rem 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-text-dark);
+  font-weight: 600;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+
+/* Global Utility Classes */
+.container {
+  max-width: var(--container-width);
+  margin: auto;
+  padding: 0 var(--container-padding-mobile);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--container-padding);
+  }
+}
