@@ -37,8 +37,13 @@ const { response: product } = await useApi(`/products/${productId.value}`)
 // Fetch Reviews Data
 const {
   response: reviews,
+  reload,
 } = await useApi(`/reviews?productId=${productId.value}`)
 
+// Reload review when a new review is added
+const onReviewAdded = () => {
+  reload();
+}
 </script>
 
 <style scoped>
